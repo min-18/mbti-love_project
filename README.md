@@ -1,1 +1,1 @@
-# mbti-love_project
+# youQuiz_project
