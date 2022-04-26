@@ -17,30 +17,29 @@
     </article>
     
     <article class="question mt-5">
-        <!-- <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
-        </div> -->
         <h2 id="title" class="mt-5 text-center">Question</h2>
+        <!-- 문제 내용 담김. -->
+        <h4 id="q-content" class="mt-5 text-center"></h4>
         <!-- 4종류 항목중에 뭐에 관한 항목인지 정보를 담기 위해 -->
-        <input id="type" type="hidden" value="EI">
-        <!-- 버튼 눌렀을 때 해당 값이 변하도록. -->
+        <input id="type" type="hidden" value="0">
+        <!-- 보기버튼. -->
         <button id="A" type="button" class="btn btn-primary mt-5">Primary</button>
         <button id="B" type="button" class="btn btn-primary mt-5">Primary</button>
         <button id="C" type="button" class="btn btn-primary mt-5">Primary</button>
         <button id="D" type="button" class="btn btn-primary mt-5">Primary</button>
     </article>
-    
+
     <article class="quit">
         <h2 class="mt-5 text-center">Good Bye~</h2>
     </article>
 
     <article class="result">  
         <!-- <image id="img" class="rounded-circle mt-5" src="lion.jpg" alt="" ></image> -->
-        <h2 id="" class="text-center mt-5">(mbti)가 사랑할 때</h2>
-        <h3 id="explain" class="text-center mt-5">설명</h3>
+        <h2 id="" class="text-center mt-5">정답 or 오답입니다.</h2>
+        <h3 id="explain" class="text-center mt-5">해설</h3>
     </article>
     <!-- 사용자 화면에는 안보이지만 내부적으로 값을 갖고 싶을 때 input hidden 많이 사용한다. -->
-    <!-- 쉽게 점수판이라고 생각. -->
+    <!-- 쉽게 점수판이라고 생각. value = (정답:1, 오답:0) -->
     <input id="EI" type="hidden" value="0">
 
     <!-- 부트스트랩을 사용하기 위해 복붙. -->
