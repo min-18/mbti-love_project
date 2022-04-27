@@ -2,3 +2,7 @@ article {
     display: flex;
     flex-direction: column;
 }
+.share {
+    margin: 0 auto;
+    margin-top: 70px;
+}
