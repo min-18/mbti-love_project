@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You Quiz?</title>
+    <title>유퀴즈?</title>
+    <meta name="description" content="방송에 나온 퀴즈를 랜덤으로 풀어볼 수 있는 퀴즈쇼 컨텐츠입니다.">
+    <meta property="og:type" content="website"> 
+    <meta property="og:title" content="유퀴즈?">
+    <meta property="og:description" content="방송에 나온 퀴즈를 랜덤으로 풀어볼 수 있는 퀴즈쇼 컨텐츠입니다.">
+    <meta property="og:image" content="https://quiz-show.netlify.app/YouQuiz.png">
+    <meta property="og:url" content="https://quiz-show.netlify.app/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,12 +18,12 @@
     <article class="start">
         <!-- 부트스트랩을 사용해서 class로 css 컨트롤 가능. -->
         <h1 class="mt-5 text-center">You Quiz?</h1>
-        <button type="button" class="btn btn-success mt-5" onclick="start();">Yes!</button>
-        <button type="button" class="btn btn-danger mt-5">No</button>
+        <button type="button" class="btn btn-success mt-5" onclick="start();">좋아요!</button>
+        <button type="button" class="btn btn-danger mt-5">아니요.</button>
     </article>
     
     <article class="question mt-5">
-        <h2 id="title" class="mt-5 text-center">Question</h2>
+        <h2 id="q-title" class="mt-5 text-center">Question</h2>
         <!-- 문제 내용 담김. -->
         <h4 id="q-content" class="mt-5 text-center"></h4>
         <!-- 4종류 항목중에 뭐에 관한 항목인지 정보를 담기 위해 -->
@@ -33,12 +39,19 @@
         <h2 class="mt-5 text-center">Good Bye~</h2>
     </article>
 
+    <article class="wait-result">
+        <h1 class="wait-result-text"></h1>
+    </article>
+
     <article class="result">  
-        <!-- <image id="img" class="rounded-circle mt-5" src="lion.jpg" alt="" ></image> -->
-        <h2 id="answer" class="text-center mt-5">정답 or 오답입니다.</h2>
+        <h1 id="answer" class="text-center mt-5">정답 or 오답입니다.</h1>
+        <h3 id="correct-answer" class="text-center mt-5">정답 :<span class="correct-answer"></span></h2>
         <h3 id="explain" class="text-center mt-5">해설</h3>
+        <!-- 다시하기 버튼 // 다시하기버튼 누르면 새로시작(reload) -->
+        <button id="replay" type="button" class="btn btn-lg btn-primary mt-5" onclick="window.location.reload()">다시하기</button>
+        <!-- addthis로 공유하는 기능사용. -->
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <div class="share addthis_inline_share_toolbox"></div>
+        <div class="share addthis_inline_share_toolbox"><h4 class="share-text">공유하기</h4></div>
     </article>
     <!-- 사용자 화면에는 안보이지만 내부적으로 값을 갖고 싶을 때 input hidden 많이 사용한다. -->
     <!-- 쉽게 점수판이라고 생각. value = (정답:1, 오답:0) -->
@@ -50,6 +63,16 @@
     <input id="보기3" class="type" type="hidden" value="0">
     <input id="보기4" class="type" type="hidden" value="0">
 
+    <!-- 카카오 광고 배너 -->
+    <article class="kakao_ad">
+        <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit    = "DAN-8cn7nN1zxRJnv9jS" 
+        data-ad-width   = "320" 
+        data-ad-height  = "100"></ins> 
+    </article>
+    
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    
     <!-- 부트스트랩을 사용하기 위해 복붙. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="app.js"></script>
@@ -60,3 +83,5 @@
 </html>
 
 <!--  if문으로 몇번문제의 정답 == 사용자 선택 => 정답; score의 value=1, else(오답) =>score의 value=0-->
+
+<!-- 추가로 netlify로 배포하는 과정에서 404에러가 떴다. _redirects파일만들어 한줄 복붙했더니 해결. 한 페이지에 js로 화면을 컨트롤하는 single page application이라 이런 오류가 생긴 듯.(추가로 404에러는 수정하기 쉬운 에러다.) -->

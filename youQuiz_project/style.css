@@ -2,7 +2,44 @@ article {
     display: flex;
     flex-direction: column;
 }
+.result {
+    margin-right: 60px;
+    margin-left: 60px;
+
+}
+#correct-answer {
+    border-bottom: 2px solid coral;
+    height: 10%;
+    margin: 0 auto;
+}
+#q-title {
+    color: coral;
+}
+#q-content {
+    border: 2px solid coral;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 30px;
+}
+#replay {
+    width: 30%;
+    margin: 0 auto;
+}
 .share {
     margin: 0 auto;
     margin-top: 70px;
+}
+.kakao_ad {
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.wait-result-text {
+    text-align: center;
+    margin-top: 60px;
+}
+.share-text {
+    text-align: center;
+    margin-bottom: 10px;
 }
