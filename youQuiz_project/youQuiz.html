@@ -18,8 +18,8 @@
     <article class="start">
         <!-- 부트스트랩을 사용해서 class로 css 컨트롤 가능. -->
         <h1 class="mt-5 text-center">You Quiz?</h1>
-        <button type="button" class="btn btn-success mt-5" onclick="start();">좋아요!</button>
-        <button type="button" class="btn btn-danger mt-5">아니요.</button>
+        <button class="btn btn-success mt-5" onclick="start();">좋아요!</button>
+        <button class="btn btn-danger mt-5">아니요.</button>
     </article>
     
     <article class="question mt-5">
@@ -29,10 +29,10 @@
         <!-- 4종류 항목중에 뭐에 관한 항목인지 정보를 담기 위해 -->
         <input id="type" type="hidden" value="0">
         <!-- 보기버튼. -->
-        <button id="A" value="보기1" type="button" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
-        <button id="B" value="보기2" type="button" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
-        <button id="C" value="보기3" type="button" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
-        <button id="D" value="보기4" type="button" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
+        <button id="choice-a" value="보기1" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
+        <button id="choice-b" value="보기2" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
+        <button id="choice-c" value="보기3" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
+        <button id="choice-d" value="보기4" class="btn btn-primary mt-5" onclick="reply_click(this.value)">Primary</button>
     </article>
 
     <article class="quit">
@@ -45,10 +45,12 @@
 
     <article class="result">  
         <h1 id="answer" class="text-center mt-5">정답 or 오답입니다.</h1>
-        <h3 id="correct-answer" class="text-center mt-5">정답 :<span class="correct-answer"></span></h2>
+        <h3 id="correct-answer" class="text-center mt-5">정답 :<span class="correct-answer"></span></h3>
         <h3 id="explain" class="text-center mt-5">해설</h3>
         <!-- 다시하기 버튼 // 다시하기버튼 누르면 새로시작(reload) -->
-        <button id="replay" type="button" class="btn btn-lg btn-primary mt-5" onclick="window.location.reload()">다시하기</button>
+        <button id="replay" class="btn btn-lg btn-primary mt-5" >다시하기</button>
+        <!-- 이거랑 이벤트리스너 중 선택 onclick="window.location.reload()" -->
+
         <!-- addthis로 공유하는 기능사용. -->
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="share addthis_inline_share_toolbox"><h4 class="share-text">공유하기</h4></div>
